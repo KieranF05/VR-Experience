@@ -7,6 +7,7 @@ public class Lock : MonoBehaviour
     [SerializeField] GameObject handle;
     [SerializeField] GameObject key;
     private bool locked;
+    AudioSource audioSource;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -21,6 +22,9 @@ public class Lock : MonoBehaviour
         if (other.tag == "key" && locked)
         {
             UnlockDoor();
+            audioSource = GetComponent<AudioSource>();
+            if (audioSource != null)
+                audioSource.Play();
         }
     }
 

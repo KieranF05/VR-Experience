@@ -9,6 +9,8 @@ public class PuzzleManager : MonoBehaviour
 
     public DrawerController drawer;
 
+    public Light[] labLights;
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
@@ -61,6 +63,11 @@ public class PuzzleManager : MonoBehaviour
         if (drawer != null)
         {
             drawer.OpenDrawer();
+        }
+
+        foreach (Light light in labLights)
+        {
+            light.enabled = true;
         }
     }
 
