@@ -11,17 +11,7 @@ public class PuzzleManager : MonoBehaviour
 
     public Light[] labLights;
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-            PressButton(1);
 
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-            PressButton(2);
-
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-            PressButton(3);
-    }
 
     public void PressButton(int id)
     {

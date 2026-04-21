@@ -27,27 +27,13 @@ public class VRButton : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
-    void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            
-        }
-    }
-
     void OnPressed(SelectEnterEventArgs args)
     {
         Press();
     }
 
-    
-    void OnMouseDown()
-    {
-        Debug.Log("Mouse clicked button: " + buttonID);
-        Press();
-    }
 
-    void Press()
+    public void Press()
     {
         Debug.Log("Button pressed: " + buttonID);
 
@@ -56,6 +42,7 @@ public class VRButton : MonoBehaviour
         if (rend != null)
             rend.material.color = Color.green;
 
+        if (puzzleManager  != null)
         puzzleManager.PressButton(buttonID);
 
         Invoke(nameof(ResetPosition), 0.2f);
