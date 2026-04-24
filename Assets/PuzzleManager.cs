@@ -11,11 +11,15 @@ public class PuzzleManager : MonoBehaviour
 
     public Light[] labLights;
 
+    public CO2Controller co2;
 
-
+        void Start()
+        {
+            co2.StartGas();
+        }
     public void PressButton(int id)
     {
-        Debug.Log("Received button: " + id);
+         Debug.Log("Received button: " + id);
 
         playerInput.Add(id);
 

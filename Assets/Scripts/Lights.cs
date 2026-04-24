@@ -22,12 +22,15 @@ public class Lights : MonoBehaviour
 
     void ActivatePower()
     {
-        activated = true;
+        Debug.Log("Turning Lights On");
 
         foreach (Light light in labLights)
         {
             if (light != null)
+            {
                 light.enabled = true;
+                light.intensity = 3f;
+            }
 
         }
     }
