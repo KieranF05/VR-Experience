@@ -35,6 +35,7 @@ public class Lock : MonoBehaviour
         handle.GetComponent<BoxCollider>().enabled = true;
         this.GetComponent<Rigidbody>().isKinematic = false;
         locked = false;
+        
 
 
     }

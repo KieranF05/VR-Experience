@@ -5,6 +5,8 @@ public class SortingGameManager : MonoBehaviour
     public BasketZone coalBasket;
     public BasketZone energyBasket;
     public GameObject door;
+    public HingeJoint doorHinge;
+    public Handle handle;
 
     private bool opened = false;
 
@@ -26,7 +28,19 @@ public class SortingGameManager : MonoBehaviour
 
         if (door != null)
         {
-            door.transform.position += new Vector3(0, 2f, 0);
+            JointLimits limits = doorHinge.limits;
+
+            limits.min = 0;
+            limits.max = 90;
+
+            doorHinge.limits = limits;
+
+            doorHinge.GetComponent<Rigidbody>().AddTorque(Vector3.up * 5f, ForceMode.Impulse);
+        }
+
+        if (handle != null)
+        {
+            handle.Unlock();
         }
     }
 }
