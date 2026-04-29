@@ -9,8 +9,15 @@ public class FadeToWhite : MonoBehaviour
 
     public void StartFade()
     {
-        StartCoroutine(FadeRoutine());
+        Debug.Log("Force White");
+
+        fadeImage.color = new Color(1f, 1f, 1f, 1f);
+        
+     ///   StartCoroutine(FadeRoutine()); ///
+    
+    
     }
+
 
     IEnumerator FadeRoutine()
     {

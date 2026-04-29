@@ -2,11 +2,17 @@ using UnityEngine;
 using System;
 public class CradleTrigger : MonoBehaviour
 {
+    public AudioSource generatorAudio;
     private void OnTriggerEnter(Collider other)
     {
        if(other.tag == "cradleBall")
         {
             GameEvents.current.SetCradleActive();
+        }
+
+        if (generatorAudio != null)
+        {
+            generatorAudio.Play();
         }
     }
 
@@ -16,6 +22,13 @@ public class CradleTrigger : MonoBehaviour
         {
             GameEvents.current.SetCradleDeactive();
         }
+        
+        if (generatorAudio != null)
+        {
+            generatorAudio.Play();
+        }
+
     }
+
 
 }

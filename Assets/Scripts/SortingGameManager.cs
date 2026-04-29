@@ -6,7 +6,7 @@ public class SortingGameManager : MonoBehaviour
     public BasketZone energyBasket;
     public GameObject door;
     public HingeJoint doorHinge;
-    public Handle handle;
+    public AudioSource doorAudio;
 
     private bool opened = false;
 
@@ -38,9 +38,9 @@ public class SortingGameManager : MonoBehaviour
             doorHinge.GetComponent<Rigidbody>().AddTorque(Vector3.up * 5f, ForceMode.Impulse);
         }
 
-        if (handle != null)
+        if (doorAudio != null)
         {
-            handle.Unlock();
+            doorAudio.Play();
         }
     }
 }
